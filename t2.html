@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instainvites - Templates</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Title Bar */
+        .title-bar {
+            background-color: #ff6a00; /* Orange Color */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Template Container */
+        .template-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        /* Template Card */
+        .template-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+            max-width: 200px;
+        }
+
+        .template-card img {
+            width: 100%; /* Adjust to card width */
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .template-card h2 {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333; /* Dark Background */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #ff6a00; /* Footer link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <h1>Choose Your Invitation Template</h1>
+    </div>
+
+    <!-- Flexbox Layout -->
+    <div class="template-container">
+        <!-- Birthday Template -->
+        <div class="template-card">
+            <h2>Birthday</h2>
+            <a href="birthday/birthday.html" ><img src="https://static.vecteezy.com/system/resources/previews/012/744/356/original/cartoon-kids-party-poster-with-big-table-sweets-and-gifts-in-birthday-celebration-illustration-vector.jpg" alt="Birthday Template"></a>
+        </div>
+
+        <!-- Marriage Template -->
+        <div class="template-card">
+            <h2>Marriage</h2>
+            <a href="marriage/marriage.html" ><img src="https://png.pngtree.com/png-vector/20231023/ourmid/pngtree-cute-indian-wedding-cartoon-couple-png-image_10322873.png" alt="Marriage Template"></a>
+        </div>
+
+        <!-- HalfSaree Ceremony Template -->
+        <div class="template-card">
+            <h2>HalfSaree Ceremony</h2>
+            <a href="half/half.html" ><img src="https://png.pngtree.com/png-clipart/20230905/ourlarge/pngtree-mehndi-bride-caricature-png-image_10015500.png" alt="HalfSaree Ceremony Template"></a>
+        </div>
+
+        <!-- Naming Ceremony Template -->
+        <div class="template-card">
+            <h2>Naming Ceremony</h2>
+            <a href="naming/name.html" ><img src="Screenshot 2024-12-14 191947.png" alt="Naming Ceremony Template"></a>
+        </div>
+
+        <!-- Anniversary Template -->
+        <div class="template-card">
+            <h2>Anniversary</h2>
+            <a href="wedding_ani/ani.html" ><img src="DALL·E 2024-12-15 22.52.31 - A couple celebrating their marriage anniversary with family. The scene includes a beautifully decorated living room or garden setting with a table set.webp" alt="Anniversary Template"></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Instainvites. All Rights Reserved. | Created by Team Instainvite</p>
+        <p>Contact us: <a href="mailto:23b01a05c0@svecw.edu.in">contact@instainvites.com</a></p>
+    </div>
+</body>
+</html>

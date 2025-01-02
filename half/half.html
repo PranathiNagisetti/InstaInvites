@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instainvites - Templates</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: oldlace;
+        }
+
+        /* Title Bar */
+        .title-bar {
+            background-color: #ff6a00; /* Orange Color */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Template Container */
+        .template-container {
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            flex-wrap: nowrap; /* Prevent wrapping of items */
+            overflow-x: auto; /* Allow horizontal scrolling for smaller screens */
+            gap: 1.5rem; /* Spacing between items */
+            padding: 2rem;
+        }
+
+        /* Template Card */
+        .template-card {
+            flex: 0 0 250px; /* Fixed width for each card */
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .template-card img {
+            width: 100%; /* Ensures the image takes up the card's width */
+            height: 400px; /* Fixed height for consistency */
+            object-fit: cover; /* Maintains aspect ratio and avoids distortion */
+            border-radius: 4px;
+        }
+
+        .template-card h2 {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <h1>Choose Your Half Saree Function Invitation Template</h1>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="template-container">
+        <!-- Birthday Template -->
+        <div class="template-card">
+            <a href="halfsaree/h1.html" >
+                <img src="images/Screenshot 2024-12-15 215543.png" alt="Birthday Template">
+            </a>
+        </div>
+
+        <!-- Marriage Template -->
+        <div class="template-card">
+            <a href="halfsaree/h2.html" >
+                <img src="images/Screenshot 2024-12-15 215615.png" alt="Marriage Template">
+            </a>
+        </div>
+
+        <!-- Housewarming Template -->
+        <div class="template-card">
+            <a href="halfsaree/h3.html" >
+                <img src="images/Screenshot 2024-12-28 224407.png" alt="Housewarming Template">
+            </a>
+        </div>
+
+        <!-- Get-Together Template -->
+        <div class="template-card">
+            <a href="halfsaree/h4.html" >
+                <img src="images/Screenshot 2024-12-15 215728.png" alt="Get-Together Template">
+            </a>
+        </div>
+
+        <!-- Party Template -->
+        <div class="template-card">
+            <a href="halfsaree/h5.html" >
+                <img src="images/Screenshot 2024-12-15 215749.png" alt="Party Template">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

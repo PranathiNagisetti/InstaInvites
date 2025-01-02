@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instainvites - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ff9472;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff6b6b, #ff9472);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header .logo {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+
+        header nav {
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-banner {
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, #ff9472, #ff6b6b);
+            position: relative;
+        }
+
+        .main-banner .headline {
+            font-size: 3rem;
+            font-family: "Lucida Handwriting", cursive;
+            font-weight: bold;
+        }
+
+        .main-banner .subline {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .main-banner .cta {
+            margin-top: 20px;
+            background-color: white;
+            color: #ff6b6b;
+            font-size: 1rem;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .about-section {
+            padding: 30px 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            color: #ff6b6b;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .about-section .features {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .about-section .features div {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section .features div h3 {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+
+        .about-section .features div {
+            
+            background-color:  #FFDAB9;
+        }
+
+        .footer {
+            background: #f3f3f3;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        /* Profile Section Styling */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #user-icon-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #user-icon {
+            font-size: 24px;
+        }
+
+        #username-text {
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-link {
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: #ff6b6b;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .logout-link:hover {
+            background-color: #ff9472;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Instainvites</div>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="active"><u>Home</u></a></li>
+                <li><a href="t2.html">Templates</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-item" id="user-profile">
+                    <li class="nav-item profile-section">
+                        <a href="#" id="user-icon-link">
+                            <i class="fas fa-user-circle" id="user-icon"></i>
+                        </a>
+                        <span id="username-text">
+                            <?php echo isset($username) ? $username : "Guest"; ?>
+                        </span>
+                        <a class="nav-link logout-link" href="logout.php">Logout</a>
+                    </li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="main-banner">
+        <h1 class="headline">Instainvites</h1>
+        <p class="subline">Personalize Your Invitations with Ease!</p>
+        <button class="cta">Get Started</button>
+    </div>
+
+    <div class="about-section">
+        <h2 style="font-family: 'Courier New', cursive;">Welcome to Instainvites</h2>
+        <p>
+            Welcome to Instainvites! Instainvites is your one-stop solution for creating and customizing beautiful invitations effortlessly. 
+            Whether it's a birthday party, wedding, housewarming, or any special occasion, our platform lets you design personalized invites in minutes. 
+            Choose from a variety of templates, customize colors, fonts, and details, and send invitations directly to your contacts via SMS. 
+            Save time, add a personal touch, and make every invite memorable with Instainvites!
+        </p>
+        <div class="features">
+            <div>
+                <h3 style="font-family: 'Courier New', cursive;">Wide Variety of Templates</h3>
+                <p>
+                    Choose beautifully designed templates for every occasion, from birthdays to weddings. Instainvites offers a wide variety of templates 
+                    to cater to diverse needs, providing functionality and aesthetic appeal. Visualize your final invitation in real-time after customization.
+                </p>
+            </div>
+            <div>
+                <h3 style="font-family: 'Courier New', cursive;">Easy Customization</h3>
+                <p>
+                    Personalize your invitations with customizable fonts, colors, and designs to suit your unique style. Edit details like names, dates, 
+                    and event information effortlessly while visualizing changes in real time.
+                </p>
+            </div>
+            <div>
+                <h3 style="font-family: 'Courier New', cursive;">Instant Delivery</h3>
+                <p>
+                    Send your invitations instantly . This feature ensures quick delivery and reduces the need for physical printing, 
+                    making it an eco-friendly choice.
+                </p>
+            </div>
+            <div>
+                <h3 style="font-family: 'Courier New', cursive;">Mobile-Friendly</h3>
+                <p>
+                    Create and send invites effortlessly on any device. Real-time previews ensure users see exactly how their invitation will appear. 
+                    The interface is optimized for smooth navigation on mobile devices.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Instainvites. All Rights Reserved. 
+        
+    </footer>
+</body>

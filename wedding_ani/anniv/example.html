@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: cornsilk;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .invitation-card {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .editable {
+            cursor: text;
+            font-family: "Lucida Handwriting", cursive;
+            width: 80%;
+            resize: none;
+            border: none;
+            background: transparent;
+            color: rgb(198, 174, 35); /* Text color */
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .editable:focus {
+            outline: none;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .controls select, .controls input, .controls button {
+            padding: 5px;
+        }
+
+        .controls button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #show-fonts, #increase-font, #decrease-font, #show-colors, #download-invitation, #share-whatsapp {
+            background-color: #ff6b00;
+        }
+
+        #font-select, #color-input {
+            display: none;
+        }
+
+        #font-select {
+            background-color: #FF9800;
+            color: white;
+        }
+
+        #color-input {
+            border: 1px solid #ff6b00;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card" id="invitation-card">
+        <img src="backgroun/h2.png" alt="Background" class="background-image">
+        <h2 contenteditable="true" class="editable" style="padding-top: 150px;">You're Invited!</h2>
+        <h1 contenteditable="true" class="editable">Wedding of Ram and Seetha</h1>
+        <p contenteditable="true" class="editable"><b>Date:</b> 22nd October 2024</p>
+        <p contenteditable="true" class="editable"><b>Time:</b> 3:00 PM - 5:00 PM</p>
+        <p contenteditable="true" class="editable"><b>Location:</b> Gisella's House</p>
+    </div>
+
+    <div class="controls">
+        <button id="show-fonts">Select Font</button>
+        <select id="font-select">
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Lucida Handwriting">Lucida Handwriting</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Lobster">Lobster</option>
+        </select>
+
+        <button id="show-colors">Select Color</button>
+        <input type="color" id="color-input" value="#000000">
+
+        <button id="increase-font">Increase Font Size</button>
+        <button id="decrease-font">Decrease Font Size</button>
+        <button id="download-invitation">Download Invitation</button>
+        <button id="share-whatsapp">Share via WhatsApp</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        let activeElement = null;
+
+        document.querySelectorAll('.editable').forEach(element => {
+            element.addEventListener('focus', () => {
+                activeElement = element;
+            });
+        });
+
+        document.getElementById('show-fonts').addEventListener('click', function () {
+            const fontSelect = document.getElementById('font-select');
+            fontSelect.style.display = fontSelect.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('font-select').addEventListener('change', function () {
+            if (activeElement) {
+                activeElement.style.fontFamily = this.value;
+            }
+        });
+
+        document.getElementById('show-colors').addEventListener('click', function () {
+            const colorInput = document.getElementById('color-input');
+            colorInput.style.display = colorInput.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('color-input').addEventListener('input', function () {
+            if (activeElement) {
+                activeElement.style.color = this.value;
+            }
+        });
+
+        document.getElementById('increase-font').addEventListener('click', function () {
+            if (activeElement) {
+                let currentSize = parseInt(window.getComputedStyle(activeElement).fontSize);
+                activeElement.style.fontSize = (currentSize + 2) + "px";
+            }
+        });
+
+        document.getElementById('decrease-font').addEventListener('click', function () {
+            if (activeElement) {
+                let currentSize = parseInt(window.getComputedStyle(activeElement).fontSize);
+                if (currentSize > 10) {
+                    activeElement.style.fontSize = (currentSize - 2) + "px";
+                }
+            }
+        });
+
+        document.getElementById('download-invitation').addEventListener('click', function () {
+            html2canvas(document.querySelector('.invitation-card')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'invitation.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        });
+
+        document.getElementById('share-whatsapp').addEventListener('click', function () {
+            html2canvas(document.querySelector('.invitation-card')).then(canvas => {
+                canvas.toBlob(function (blob) {
+                    const file = new File([blob], "invitation.png", { type: "image/png" });
+                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                        navigator.share({
+                            files: [file],
+                            title: "Invitation",
+                            text: "Here's the invitation card!",
+                        }).catch(error => console.log('Sharing failed', error));
+                    } else {
+                        const link = document.createElement('a');
+                        link.download = 'invitation.png';
+                        link.href = canvas.toDataURL();
+                        link.click();
+                        alert("Image downloaded. Please share it manually via WhatsApp.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
